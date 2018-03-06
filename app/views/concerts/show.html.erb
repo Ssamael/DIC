@@ -1,0 +1,6 @@
+<% concert = Concert.find(:id) %>
+<h1> <%= concert.band %> </h1>
+<h2> <%= concert.date %></h2>
+<p> <%= concert.location %></p>
+<p> <%= concert.ticket_price.ticket_buy %></p>
+<p> <%= concert.more_info %></p>

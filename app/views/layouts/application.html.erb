@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DarkIndependentConcerts</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <nav>
+    	<ul>
+    		<li><a href='/index'>List of concerts</a></li>
+    		<li><a href="/new">Add a concert</a></li>
+    	</ul>
+    </nav>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

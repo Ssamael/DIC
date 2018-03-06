@@ -1,0 +1,13 @@
+<h1> Listing concerts </h1>
+<table>
+	<tr>
+		<th>Band</th>
+		<th>Date</th>
+	</tr>
+	<% Concert.all.each do |concert| %>
+	<tr>
+		<td><%= link_to concert.band, concert %></td>
+		<td><%= concert.date %></td>
+	</tr>
+	<% end %>
+</table>
