@@ -4,10 +4,14 @@
 		<th>Band</th>
 		<th>Date</th>
 	</tr>
-	<% Concert.all.each do |concert| %>
+	<% concerts = Concert.all %>
+	<% concerts.each do |concert| %>
 	<tr>
 		<td><%= link_to concert.band, concert %></td>
 		<td><%= concert.date %></td>
 	</tr>
+	<% end %>
+	<% if concerts.size == 0 %>
+	<em>No concerts found</em>
 	<% end %>
 </table>
