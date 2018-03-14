@@ -1,17 +1,23 @@
 <h1> Listing concerts </h1>
+<%= link_to 'New concert', new_concert_path %>
+
 <table>
 	<tr>
 		<th>Band</th>
 		<th>Date</th>
 	</tr>
-	<% concerts = Concert.all %>
-	<% concerts.each do |concert| %>
+
+	<% @concerts = Concert.all %>
+	<% @concerts.each do |concert| %>
 	<tr>
-		<td><%= link_to concert.band, concert %></td>
+		<td><%= link_to concert.band, concert_path(concert) %></td>
 		<td><%= concert.date %></td>
 	</tr>
 	<% end %>
-	<% if concerts.size == 0 %>
+</table>
+
+<p>
+	<% if @concerts.size == 0 %>
 	<em>No concerts found</em>
 	<% end %>
-</table>
+</p>

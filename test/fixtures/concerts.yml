@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  band: MyString
+  date: 2018-03-13
+  place: MyString
+  ticket_price: MyString
+  buy_ticket: MyString
+  more_info: MyText
+
+two:
+  band: MyString
+  date: 2018-03-13
+  place: MyString
+  ticket_price: MyString
+  buy_ticket: MyString
+  more_info: MyText
