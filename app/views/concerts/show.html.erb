@@ -1,6 +1,12 @@
-<% concert = Concert.find(:id) %>
-<h1> <%= concert.band %> </h1>
-<h2> <%= concert.date %></h2>
-<p> <%= concert.location %></p>
-<p> <%= concert.ticket_price.ticket_buy %></p>
-<p> <%= concert.more_info %></p>
+<h1>Concert details</h1>
+
+<% @concert = Concert.find(params[:id]) %>
+<h1> <%= @concert.band %> </h1>
+<h2> <%= @concert.date %></h2>
+<p> <%= @concert.place %></p>
+<p> <%= @concert.ticket_price %></p>
+<p> <%= @concert.buy_ticket %></p>
+<p> <%= @concert.more_info %></p>
+
+<%= link_to 'Concert list', concerts_path %>
+<%= link_to 'New concert', new_concert_path %>
