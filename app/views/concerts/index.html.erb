@@ -1,4 +1,4 @@
-<h1> Listing concerts </h1>
+<h1> Concert list </h1>
 <%= link_to 'New concert', new_concert_path %>
 
 <table>
@@ -12,6 +12,11 @@
 	<tr>
 		<td><%= link_to concert.band, concert_path(concert) %></td>
 		<td><%= concert.date %></td>
+		<td><%= link_to 'Show', concert_path(concert) %></td>
+		<td><%= link_to 'Edit', edit_concert_path(concert) %></td>
+		<td><%= link_to 'Destroy', concert_path(concert), 
+				method: :delete, 
+				data: { confirm: 'Are you sure?' } %></td>
 	</tr>
 	<% end %>
 </table>
