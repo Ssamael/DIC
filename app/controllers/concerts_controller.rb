@@ -1,5 +1,6 @@
 class ConcertsController < ApplicationController
 
+	before_action :authenticate_user!, except:[:index, :show]
 
 	def index
 		@concerts = Concert.all
@@ -47,6 +48,6 @@ class ConcertsController < ApplicationController
 	private
 
 	def concert_params
-		params.require(:concert).permit(:band, :date, :place, :ticket_price, :buy_ticket, :more_info)
+		params.require(:concert).permit(:band, :date, :place, :ticket_price, :buy_ticket, :more_info, :user_id)
 	end	
 end

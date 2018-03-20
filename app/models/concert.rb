@@ -4,4 +4,6 @@ class Concert < ActiveRecord::Base
 				length: {minimum: 2}
 	validates_presence_of :date, :place
 
+	belongs_to :user
+	
 end
