@@ -1,3 +1,6 @@
+<%= render 'form_user' %>
+
+
 <h1>Concert details</h1>
 <% @concert = Concert.find(params[:id]) %>
 <p><%= link_to 'Edit', edit_concert_path(@concert) %> | <%= link_to 'Destroy', concert_path(@concert), 
