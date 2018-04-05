@@ -10,19 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320122449) do
+ActiveRecord::Schema.define(version: 20180323124746) do
 
-  create_table "concerts", force: :cascade do |t|
-    t.string "band"
-    t.date "date"
-    t.string "place"
-    t.string "ticket_price"
-    t.string "buy_ticket"
-    t.text "more_info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id"
-  end
+# Could not dump table "concerts" because of following StandardError
+#   Unknown type 'amount' for column 'ticket_price'
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

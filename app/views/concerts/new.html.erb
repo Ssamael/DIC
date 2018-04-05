@@ -1,8 +1,8 @@
 <%= render 'form_user' %>
 
-<h1>Add a concert</h1>
+<h1><%=t :add %></h1>
 
 
 <%= render 'form' %>
 
-<%= link_to 'Concert list', concerts_path %>
+<%= link_to (t :list), concerts_path %>

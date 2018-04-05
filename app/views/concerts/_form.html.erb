@@ -15,29 +15,30 @@
  <%= form.hidden_field :user_id, value: current_user.id %>
 
  <p>
- 	<%= form.label :band %><br>
+ 	<%= form.label (t :band) %><br>
  	<%= form.text_field :band %>
  </p>
 
  <p>
- 	<%= form.label :date %><br>
+ 	<%= form.label (t :date) %><br>
  	<%= form.date_field :date %>
  </p>
 
  <p>
- 	<%= form.label :place %><br>
+ 	<%= form.label (t :place) %><br>
  	<%= form.text_field :place %>
  </p>
 
  <p>
- 	<%= form.label :ticket_price %><br>
- 	<%= form.text_field :ticket_price %><br>
- 	<%= form.label :buy_ticket %><br>
+ 	<%= form.label (t :price) %><br>
+ 	<%= form.number_field :ticket_price %>
+ 	<%= form.select(:currency, options_for_select([['USD'], ['EUR'], ['CAD'], ['PLN']])) %><br>
+ 	<%= form.label (t :buy) %><br>
  	<%= form.url_field :buy_ticket %>
  </p>
 
  <p>
-	<%= form.label :more_info %><br>
+	<%= form.label (t :more) %><br>
 	<%= form.text_area :more_info %>
  </p>
 
