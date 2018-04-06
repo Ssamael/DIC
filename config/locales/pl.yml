@@ -1,0 +1,25 @@
+
+pl:
+  hello: "Witaj świecie!"
+  out: "Wyloguj"
+  in: "Zaloguj się"
+  reg: "Rejestracja"
+
+  list: 'Lista koncertów'
+  new: 'Nowy koncert'
+
+  details: "Szczegóły koncertu"
+  edit: "Edytuj"
+  destroy: "Usuń"
+  confirm: 'Jesteś pewny?'
+
+  band: "Zespół"
+  date: "Data"
+  place: "Miejsce"
+  price: "Cena biletu"
+  buy: "Kup bilet"
+  more: "Więcej informacji"
+
+  edit_concert: "Edytuj koncert"
+
+  add: "Dodaj koncert"

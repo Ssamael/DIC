@@ -1,3 +1,29 @@
+
+en:
+  hello: "Hello world"
+  out: "Log out"
+  in: "Log in"
+  reg: "Registration"
+
+  list: 'Concert list'
+  new: 'New concert'
+
+  details: "Concert details"
+  edit: "Edit"
+  destroy: "Destroy"
+  confirm: 'Are you sure?'
+
+  band: "Band"
+  date: "Date"
+  place: "Place"
+  price: "Ticket price"
+  buy: "Ticket buy"
+  more: "More information"
+
+  edit_concert: "Edit concert"
+
+  add: "Add a concert"
+
 # Files in the config/locales directory are used for internationalization
 # and are automatically loaded by Rails. If you want to use locales other
 # than English, add the necessary files in this directory.
@@ -28,29 +54,3 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-
-en:
-  hello: "Hello world"
-  out: "Log out"
-  in: "Log in"
-  reg: "Registration"
-
-  list: 'Concert list'
-  new: 'New concert'
-
-  details: "Concert details"
-  edit: "Edit"
-  destroy: "Destroy"
-  confirm: 'Are you sure?'
-
-  band: "Band"
-  date: "Date"
-  place: "Place"
-  price: "Ticket price"
-  buy: "Ticket buy"
-  more: "More information"
-
-  edit_concert: "Edit concert"
-
-  add: "Add a concert"
-
