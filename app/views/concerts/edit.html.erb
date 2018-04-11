@@ -1,9 +1,9 @@
 <%= render 'form_user' %>
 
 
-<h1><%=t :edit_concert %></h1>
+<h1><%= I18n.t("concert.edit_concert") %></h1>
 
 
 <%= render 'form' %>
 
-<%= link_to (t :list), concerts_path %>
+<%= link_to I18n.t("concerts.list"), concerts_path %>

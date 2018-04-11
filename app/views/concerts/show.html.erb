@@ -3,9 +3,9 @@
 
 <h1><%=t :details %></h1>
 <% @concert = Concert.find(params[:id]) %>
-<p><%= link_to (t :edit), edit_concert_path(@concert) %> | <%= link_to (t :destroy), concert_path(@concert), 
+<p><%= link_to I18n.t("concerts.edit"), edit_concert_path(@concert) %> | <%= link_to I18n.t("concerts.destroy"), concert_path(@concert), 
 				method: :delete, 
-				data: { confirm: (t :confirm) } %></p>
+				data: { confirm: I18n.t("concerts.confirm") } %></p>
 
 <h1> <%= @concert.band %> </h1>
 <h2> <%= @concert.date %></h2>
@@ -14,5 +14,5 @@
 <p> <%= @concert.buy_ticket %></p>
 <p> <%= @concert.more_info %></p>
 
-<%= link_to (t :list), concerts_path %>
-<%= link_to (t :new), new_concert_path %>
+<%= link_to I18n.t("concerts.list"), concerts_path %>
+<%= link_to I18n.t("concerts.new"), new_concert_path %>

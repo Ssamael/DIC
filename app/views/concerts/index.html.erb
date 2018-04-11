@@ -1,13 +1,13 @@
 <%= render 'form_user' %>
 
-<h1><%=t :list %></h1>
+<h1><%= I18n.t("concerts.list") %></h1>
 
-<%= link_to (t :new), new_concert_path %>
+<%= link_to I18n.t("concerts.new"), new_concert_path %>
 
 <table>
 	<tr>
-		<th><%=t :band %></th>
-		<th><%=t :date %></th>
+		<th><%= I18n.t("concert.band") %></th>
+		<th><%= I18n.t("concert.date") %></th>
 	</tr>
 
 	<% @concerts = Concert.all %>
