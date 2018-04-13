@@ -1,7 +1,9 @@
 <% if user_signed_in? %>
- <p><%= current_user.email %></p>
- <p><%= link_to I18n.t("user.out"), destroy_user_session_path, method: :delete %></p>
+  <ul class="user">
+ 	<li><%= current_user.email %></li>
+ 	<li><%= link_to I18n.t("user.out"), destroy_user_session_path, method: :delete %></li>
  <% else %>
- <p><%= link_to I18n.t("user.reg"), new_user_registration_path %></p>
- <p><%= link_to I18n.t("user.in"), new_user_session_path %></p>
+ 	<li><%= link_to I18n.t("user.reg"), new_user_registration_path %></li>
+ 	<li><%= link_to I18n.t("user.in"), new_user_session_path %></li>
+  </ul>
 <% end %>

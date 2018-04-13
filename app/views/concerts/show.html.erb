@@ -1,18 +1,19 @@
 <%= render 'form_user' %>
 
 
-<h1><%=t :details %></h1>
+<h3><%= I18n.t("concerts.details") %></h3>
 <% @concert = Concert.find(params[:id]) %>
 <p><%= link_to I18n.t("concerts.edit"), edit_concert_path(@concert) %> | <%= link_to I18n.t("concerts.destroy"), concert_path(@concert), 
 				method: :delete, 
 				data: { confirm: I18n.t("concerts.confirm") } %></p>
 
-<h1> <%= @concert.band %> </h1>
-<h2> <%= @concert.date %></h2>
+<h2> <%= @concert.band %> </h2>
+<h3> <%= @concert.date %></h3>
 <p> <%= @concert.place %></p>
 <p> <%= @concert.ticket_price %> <%= @concert.currency %></p>
 <p> <%= @concert.buy_ticket %></p>
 <p> <%= @concert.more_info %></p>
-
-<%= link_to I18n.t("concerts.list"), concerts_path %>
-<%= link_to I18n.t("concerts.new"), new_concert_path %>
+<ul>
+<li><%= link_to I18n.t("concerts.list"), concerts_path %></li>
+<li><%= link_to I18n.t("concerts.new"), new_concert_path %></li>
+</ul>
