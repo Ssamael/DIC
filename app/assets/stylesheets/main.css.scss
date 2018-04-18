@@ -1,0 +1,43 @@
+$color: #b00;
+
+body {
+	background: black;
+	a {
+		color: $color;
+	}
+}
+
+
+.features.container {
+	$background: #090909;
+	background: $background;
+	color: $color;
+	
+	table { 
+		th {
+			background: #500;
+			color: #444;
+		}
+		tr:hover {
+			background: lighten($background, 5%);
+		}
+	}
+}
+
+.features {
+	.field {
+		padding: 10px;
+	}
+
+}
+
+.container {
+	.navbar-brand {
+		color: #000;
+		text-shadow: $color -2px 2px;
+	}
+	.user {
+		color: lighten($color, 10%);
+		font-weight: bolder;
+	}
+}

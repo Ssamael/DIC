@@ -1,49 +1,51 @@
-<%= form_for @concert, locale: true do |form| %>
-<% if @concert.errors.any? %>
-	<div id="error_explanation">
-		<h3>
-			<%= pluralize(@concert.errors.count, "error") %> prohibited this concert from being saved:
-			</h3>
-			<ul>
-			<% @concert.errors.full_messages.each do |msg| %>
-			<li><%= msg %></li>
-			<% end %>
-		</ul>
-	</div>
+<div class='features'>
+	<%= form_for @concert, locale: true do |form| %>
+	<% if @concert.errors.any? %>
+		<div id="error_explanation">
+			<h3>
+				<%= pluralize(@concert.errors.count, "error") %> prohibited this concert from being saved:
+				</h3>
+				<ul>
+				<% @concert.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
 	<% end %>
 
- <%= form.hidden_field :user_id, value: current_user.id %>
+	<%= form.hidden_field :user_id, value: current_user.id %>
 
- <p>
- 	<%= form.label I18n.t("concert.band") %><br>
- 	<%= form.text_field :band %>
- </p>
+    <div class="field">
+	 	<%= form.label I18n.t("concert.band") %><br>
+	 	<%= form.text_field :band %>
+	</div>
 
- <p>
- 	<%= form.label I18n.t("concert.date") %><br>
- 	<%= form.date_field :date %>
- </p>
+	<div class="field">
+	 	<%= form.label I18n.t("concert.date") %><br>
+	 	<%= form.date_field :date %>
+	</div>
 
- <p>
- 	<%= form.label I18n.t("concert.place") %><br>
- 	<%= form.text_field :place %>
- </p>
+    <div class="field">
+	 	<%= form.label I18n.t("concert.place") %><br>
+	 	<%= form.text_field :place %>
+	</div>
 
- <p>
- 	<%= form.label I18n.t("concert.price") %><br>
- 	<%= form.number_field :ticket_price %>
- 	<%= form.select(:currency, options_for_select([['USD'], ['EUR'], ['CAD'], ['PLN']])) %><br>
- 	<%= form.label I18n.t("concert.buy") %><br>
- 	<%= form.url_field :buy_ticket %>
- </p>
+    <div class="field">
+	 	<%= form.label I18n.t("concert.price") %><br>
+	 	<%= form.number_field :ticket_price %>
+	 	<%= form.select(:currency, options_for_select([['USD'], ['EUR'], ['CAD'], ['PLN']])) %><br>
+	 	<%= form.label I18n.t("concert.buy") %><br>
+	 	<%= form.url_field :buy_ticket %>
+	</div>
 
- <p>
-	<%= form.label I18n.t("concert.more") %><br>
-	<%= form.text_area :more_info %>
- </p>
+    <div class="field">
+		<%= form.label I18n.t("concert.more") %><br>
+		<%= form.text_area :more_info %>
+	</div>
 
-<p>
-	<%= form.submit %>
-</p>
+    <div class="actions btn">
+		<%= form.submit %>
+	</div>
 
-<% end %>
+	<% end %>
+</div>

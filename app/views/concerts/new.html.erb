@@ -1,8 +1,10 @@
-<%= render 'form_user' %>
+<%= render 'form_navbar' %>
 
-<h2><%=t :add %></h2>
+<div class='features container'>
+	<h2><%= I18n.t("concert.add") %></h2>
 
 
-<%= render 'form' %>
+	<%= render 'form' %>
 
-<%= link_to I18n.t("concerts.list"), concerts_path %>
+	<%= link_to I18n.t("concerts.list"), concerts_path %>
+</div>

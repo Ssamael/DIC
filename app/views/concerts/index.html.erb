@@ -1,26 +1,25 @@
-	<%= render 'form_user' %>
+<%= render 'form_navbar' %>
+<div class='container features'>
+	<h2><%= I18n.t("concerts.list") %></h2>
 
-<h2><%= I18n.t("concerts.list") %></h2>
+	<table class='table table-dark'>
+		<tr class='table_header'>
+			<th><%= I18n.t("concert.band") %></th>
+			<th><%= I18n.t("concert.date") %></th>
+		</tr>
 
-<%= link_to I18n.t("concerts.new"), new_concert_path %>
+		<% @concerts = Concert.all %>
+		<% @concerts.each do |concert| %>
+		<tr>
+			<td><%= link_to concert.band, concert_path(concert) %></td>
+			<td><%= concert.date %></td>
+		</tr>
+		<% end %>
+	</table>
 
-<table>
-	<tr>
-		<th><%= I18n.t("concert.band") %></th>
-		<th><%= I18n.t("concert.date") %></th>
-	</tr>
-
-	<% @concerts = Concert.all %>
-	<% @concerts.each do |concert| %>
-	<tr>
-		<td><%= link_to concert.band, concert_path(concert) %></td>
-		<td><%= concert.date %></td>
-	</tr>
-	<% end %>
-</table>
-
-<p>
-	<% if @concerts.size == 0 %>
-	<em>No concerts found</em>
-	<% end %>
-</p>
+	<p>
+		<% if @concerts.size == 0 %>
+		<em>No concerts found</em>
+		<% end %>
+	</p>
+</div>
