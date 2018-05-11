@@ -1,12 +1,12 @@
 class Concert < ActiveRecord::Base
 
+	has_many :get_involved
+	has_many :users, through: :get_involved
 
 	validates :band,
 				presence: true,
 				length: {minimum: 2}
 	validates_presence_of :date, :place
-
-	belongs_to :user
 	
 	register_currency :eur
 	

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180321112025) do
+ActiveRecord::Schema.define(version: 20180430123542) do
 
   create_table "concerts", force: :cascade do |t|
     t.string "band"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 20180321112025) do
     t.integer "user_id"
     t.integer "ticket_price_cents", default: 0, null: false
     t.string "currency", default: "USD", null: false
+  end
+
+  create_table "get_involveds", force: :cascade do |t|
+    t.integer "concert_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["concert_id"], name: "index_get_involveds_on_concert_id"
+    t.index ["user_id"], name: "index_get_involveds_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,6 +47,7 @@ ActiveRecord::Schema.define(version: 20180321112025) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

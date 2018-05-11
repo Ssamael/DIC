@@ -3,10 +3,19 @@
 <div class='features container'>
 	<h3><%= I18n.t("concerts.details") %></h3>
 	<% @concert = Concert.find(params[:id]) %>
-	<p><%= link_to I18n.t("concerts.edit"), edit_concert_path(@concert) %> | <%= link_to I18n.t("concerts.destroy"), concert_path(@concert), 
-					method: :delete, 
-					data: { confirm: I18n.t("concerts.confirm") } %></p>
-
+	<% if current_user.try(:admin?) %>
+		<p><%= link_to I18n.t("concerts.edit"), edit_concert_path(@concert) %>
+			<%= link_to I18n.t("concerts.destroy"), concert_path(@concert), 
+								method: :delete, 
+								data: { confirm: I18n.t("concerts.confirm") } %></p>
+	<% end %>
+	<% @user_id = current_user.id %>
+	<% @get_involved = @concert.get_involved.where(user_id: @user_id) %>
+	<% if @get_involved.any? %>
+		<p>U're involved</p>
+	<% else %>
+		<p><%= link_to I18n.t("concert.get_involved"), concert_join_path(@concert), method: :post %></p>
+	<% end %>
 	<h2> <%= @concert.band %> </h2>
 	<h3><i class='glyphicon glyphicon-calendar'></i> <%= @concert.date %></h3>
 	<p><i class='glyphicon glyphicon-globe'></i> <%= @concert.place %></p>

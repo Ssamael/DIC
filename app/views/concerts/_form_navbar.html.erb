@@ -11,7 +11,9 @@
 		 		<li><%= link_to I18n.t("user.reg"), new_user_registration_path %></li>
 		 		<li><%= link_to I18n.t("user.in"), new_user_session_path %></li>
 			  <% end %>
-			  <li><%= link_to I18n.t("concerts.new"), new_concert_path %></li>
+			  <% if current_user.try(:admin?) %>
+			  <li><%= link_to I18n.t("concerts.new"), new_concert_path %></li>	
+			  <% end %>
 			</ul>
 		</div>
 	</div>

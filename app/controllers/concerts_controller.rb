@@ -43,7 +43,11 @@ class ConcertsController < ApplicationController
 
 		redirect_to concerts_path		
 	end
-
+	def join
+		@concert = Concert.find(params[:concert_id])
+		@concert.users << current_user
+		redirect_to @concert
+	end
 
 	private
 

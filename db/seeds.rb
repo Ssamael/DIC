@@ -1,5 +1,7 @@
 puts "SEED START"
 
+admin = User.create!(id: 1,password: "blabla", email: "bla@bla.bla", admin: true)
+
 concert_list = [
 ["Psychoformalina", "2018-07-12", "Bolkow Castle", 0, "PLN", nil, "On small steage at Castle Party Festival", 1],
 ["Aviaries", "2018-07-12", "Bolkow Castle", 0, "PLN", nil, "On small steage at Castle Party Festival", 1],
@@ -52,7 +54,7 @@ concert_list = [
 ]
 
 concert_list.each do |band, date, place, ticket_price, currency, buy_ticket, more_info, user_id |
-	Concert.create!(band: band, date: date, place: place, ticket_price_cents: ticket_price, currency: currency, buy_ticket: buy_ticket, more_info: more_info, user_id: user_id)
+	Concert.create(band: band, date: date, place: place, ticket_price_cents: ticket_price, currency: currency, buy_ticket: buy_ticket, more_info: more_info, user_id: user_id)
 end
 
 puts "SEED END"

@@ -13,6 +13,14 @@
 		<tr>
 			<td><%= link_to concert.band, concert_path(concert) %></td>
 			<td><%= concert.date %></td>
+			
+		  <% if current_user.try(:admin?) %>
+			<td><%= link_to 'Edit', edit_concert_path(concert) %></td>
+			<td><%= link_to 'Destroy', concert_path(concert), 
+				method: :delete, 
+				data: { confirm: 'Are you sure?' } %></td>
+		  <% end %>
+
 		</tr>
 		<% end %>
 	</table>
