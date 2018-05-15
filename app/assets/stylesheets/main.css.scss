@@ -1,17 +1,22 @@
-$color: #b00;
+$main-color: #b00;
 
 body {
 	background: black;
 	a {
-		color: $color;
+		color: $main-color;
 	}
 }
 
+.info {
+	padding-top: 10px;	
+	color: invert($main-color);
+	text-align: center;	
+}
 
 .features.container {
 	$background: #090909;
 	background: $background;
-	color: $color;
+	color: $main-color;
 	
 	table { 
 		th {
@@ -34,10 +39,10 @@ body {
 .container {
 	.navbar-brand {
 		color: #000;
-		text-shadow: $color -2px 2px;
+		text-shadow: $main-color -2px 2px;
 	}
 	.user {
-		color: lighten($color, 10%);
+		color: lighten($main-color, 10%);
 		font-weight: bolder;
 	}
 }
