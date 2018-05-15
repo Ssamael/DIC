@@ -1,5 +1,3 @@
-<%= render 'form_navbar' %>
-
 <div class='features container'>
 	<h3><%= I18n.t("concerts.details") %></h3>
 	<% @concert = Concert.find(params[:id]) %>
@@ -9,17 +7,20 @@
 								method: :delete, 
 								data: { confirm: I18n.t("concerts.confirm") } %></p>
 	<% end %>
-	<% @user_id = current_user.id %>
-	<% @get_involved = @concert.get_involved.where(user_id: @user_id) %>
-	<% if @get_involved.any? %>
-		<p>U're involved</p>
+	
+	<% if current_user.concerts.where(id: @concert.id).exists? %>
+		<p><%= link_to I18n.t("concert.disjoin"), concert_disjoin_path(@concert), 
+								method: :delete, 
+								data: { confirm: I18n.t("concerts.confirm") } %></p>  
 	<% else %>
-		<p><%= link_to I18n.t("concert.get_involved"), concert_join_path(@concert), method: :post %></p>
+		<p><%= link_to I18n.t("concert.join"), concert_join_path(@concert), method: :post %></p>
 	<% end %>
-	<h2> <%= @concert.band %> </h2>
-	<h3><i class='glyphicon glyphicon-calendar'></i> <%= @concert.date %></h3>
-	<p><i class='glyphicon glyphicon-globe'></i> <%= @concert.place %></p>
+	<p><%= link_to I18n.t("concert.users"), concert_users_path(@concert) %></p>
+
+	<h2> <%= @concert.band 	%> </h2>
+	<h3> <%= @concert.date %> </h3>
+	<p> <%= @concert.place %></p>
 	<p> <%= @concert.ticket_price %> <%= @concert.currency %></p>
 	<p> <%= @concert.buy_ticket %></p>
-	<p><i class='glyphicon glyphicon-info-sign'></i> <%= @concert.more_info %></p>
+	<p> <%= @concert.more_info %></p>
 </div>

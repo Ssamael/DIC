@@ -4,6 +4,9 @@ en:
     out: Log out
     in: Log in
     reg: Registration
+    email: User email adress
+    count: Number of user concerts
+    concerts_list: User list of concerts
   concerts:
     list: Concert list
     new: New concert
@@ -20,7 +23,12 @@ en:
     more: More information
     edit_concert: Edit concert
     add: Add a concert
-    get_involved: I will take part!
+    join: I will take part!
+    join_conf: We expect you there!
+    disjoin: I will not take part
+    users_list: Users participating in the concert
+    users: Users going
+    0users: No users found
 
 # Files in the config/locales directory are used for internationalization
 # and are automatically loaded by Rails. If you want to use locales other

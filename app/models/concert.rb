@@ -1,7 +1,7 @@
 class Concert < ActiveRecord::Base
 
-	has_many :get_involved
-	has_many :users, through: :get_involved
+	has_many :concert_users
+	has_many :users, through: :concert_users
 
 	validates :band,
 				presence: true,

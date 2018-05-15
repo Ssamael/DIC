@@ -46,8 +46,16 @@ class ConcertsController < ApplicationController
 	def join
 		@concert = Concert.find(params[:concert_id])
 		@concert.users << current_user
+		flash[:notice] = I18n.t("concert.join_conf")
 		redirect_to @concert
 	end
+
+	def disjoin
+		@concert = Concert.find(params[:concert_id])
+		@concert.users.delete(current_user)
+		redirect_to @concert
+	end
+
 
 	private
 

@@ -4,6 +4,9 @@ pl:
     out: Wyloguj
     in: Zaloguj się
     reg: Rejestracja
+    email: Adres email użytkownika
+    count: Liczba koncertów użytkownika
+    concerts_list: Koncerty użytkownika
   concerts:
     list: Lista koncertów
     new: Nowy koncert
@@ -20,4 +23,9 @@ pl:
     more: Więcej informacji
     edit_concert: Edytuj koncert
     add: Dodaj koncert
-    get_involved: Wezmę udział!
+    join: Wezmę udział!
+    join_conf: Widzimy się na miejscu!
+    disjoin: Nie wezmę udziału
+    users_list: Użytkownicy biorący udział w koncercie
+    users: Wezmą udział
+    0users: Brak użytkowników biorących udział

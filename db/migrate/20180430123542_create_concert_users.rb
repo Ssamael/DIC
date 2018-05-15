@@ -1,6 +1,6 @@
-class CreateGetInvolveds < ActiveRecord::Migration[5.1]
+class CreateConcertUsers < ActiveRecord::Migration[5.1]
   def change
-    create_table :get_involveds do |t|
+    create_table :concert_users do |t|
     	t.belongs_to :concert, index: true
     	t.belongs_to :user, index: true
    		t.timestamps

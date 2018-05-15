@@ -9,6 +9,29 @@
   </head>
 
   <body>
+    <div class='navbar navbar-inverse navbar-static-top'>
+        <div class='container'>
+        <a class='navbar-brand' href='/'>Dark Independent Concerts</a>  
+
+        <div class='nav navbar-nav navbar-right'>
+          <ul class='list-inline' style='margin-top: 15px;'>
+            <% if user_signed_in? %>
+            <li class='user'><%= current_user.email %></li>
+            <li><%= link_to I18n.t("user.out"), destroy_user_session_path, method: :delete %></li>
+            <% else %>
+            <li><%= link_to I18n.t("user.reg"), new_user_registration_path %></li>
+            <li><%= link_to I18n.t("user.in"), new_user_session_path %></li>
+            <% end %>
+            <% if current_user.try(:admin?) %>
+            <li><%= link_to I18n.t("concerts.new"), new_concert_path %></li>  
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  	<% if flash[:notice] %>
+  		<div class="info"><p><%= flash[:notice] %></p></div>
+  	<% end %>
     <%= yield %>
   </body>
 </html>
