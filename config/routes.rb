@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
 	resources :concerts do
 		post :join
-		delete :disjoin
+		delete :resign
 		resources :users, controller: 'concert_users'
 	end
 

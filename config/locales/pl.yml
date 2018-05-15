@@ -25,7 +25,7 @@ pl:
     add: Dodaj koncert
     join: Wezmę udział!
     join_conf: Widzimy się na miejscu!
-    disjoin: Nie wezmę udziału
+    resign: Nie wezmę udziału
     users_list: Użytkownicy biorący udział w koncercie
     users: Wezmą udział
     0users: Brak użytkowników biorących udział

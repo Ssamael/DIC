@@ -25,7 +25,7 @@ en:
     add: Add a concert
     join: I will take part!
     join_conf: We expect you there!
-    disjoin: I will not take part
+    resign: I will not take part
     users_list: Users participating in the concert
     users: Users going
     0users: No users found

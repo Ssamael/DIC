@@ -50,7 +50,7 @@ class ConcertsController < ApplicationController
 		redirect_to @concert
 	end
 
-	def disjoin
+	def resign
 		@concert = Concert.find(params[:concert_id])
 		@concert.users.delete(current_user)
 		redirect_to @concert
