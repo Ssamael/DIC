@@ -1,0 +1,4 @@
+example_id                                | status | run_time        |
+----------------------------------------- | ------ | --------------- |
+./spec/features/homepage_spec.rb[1:1]     | passed | 0.35184 seconds |
+./spec/features/join_concert_spec.rb[1:1] | failed | 0.00357 seconds |
