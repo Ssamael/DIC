@@ -8,14 +8,8 @@ require "capybara/rspec"
 
 ActiveRecord::Migration.maintain_test_schema!
 
-Capybara.register_driver :selenium do |app|
-  Capybara::Selenium::Driver.new(app, browser: :firefox)
- end
-
- Capybara.javascript_driver = :selenium
-
 RSpec.configure do |config|
-  
+
   config.include Warden::Test::Helpers
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = false
@@ -28,17 +22,23 @@ RSpec.configure do |config|
   config.before(:each) do
     DatabaseCleaner.strategy = :transaction
   end
-  
+
+  config.before(:each, type: :feature) do
+    driver_shares_db_connection_with_specs = Capybara.current_driver == :rack_test
+    unless driver_shares_db_connection_with_specs
+      DatabaseCleaner.strategy = :truncation
+    end
+  end
   config.before(:each, js: true) do
     DatabaseCleaner.strategy = :truncation
   end
-  # This block must be here, do not combine with the other `before(:each)` block.
-  # This makes it so Capybara can see the database.
-    config.before(:each) do
-      DatabaseCleaner.start
-    end
-    config.after(:each) do
-      Warden.test_reset!
-      DatabaseCleaner.clean
-    end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+  
+  config.after(:each) do
+    Warden.test_reset!
+    DatabaseCleaner.clean
+  end
 end

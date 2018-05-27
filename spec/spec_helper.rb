@@ -1,4 +1,13 @@
+require "capybara/rspec"
+
 RSpec.configure do |config|
+  Capybara.register_driver :selenium do |app|
+    Capybara::Selenium::Driver.new(app, browser: :firefox)
+   end
+  
+  Capybara.javascript_driver = :selenium
+  Capybara.default_driver = :selenium
+  
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
