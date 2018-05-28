@@ -26,6 +26,7 @@ en:
     join: I will take part!
     join_conf: We expect you there!
     resign: I will not take part
+    log2join: Log in to join concert
     users_list: Users participating in the concert
     users: Users going
     0users: No users found

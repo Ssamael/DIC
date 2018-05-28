@@ -7,13 +7,16 @@
 								method: :delete, 
 								data: { confirm: I18n.t("concerts.confirm") } %></p>
 	<% end %>
-	
-	<% if current_user.concerts.where(id: @concert.id).exists? %>
-		<p><%= link_to I18n.t("concert.resign"), concert_resign_path(@concert), 
-								method: :delete, 
-								data: { confirm: I18n.t("concerts.confirm") } %></p>  
+	<% if user_signed_in? %>
+		<% if current_user.concerts.where(id: @concert.id).exists? %>
+			<p><%= link_to I18n.t("concert.resign"), concert_resign_path(@concert), 
+									method: :delete, 
+									data: { confirm: I18n.t("concerts.confirm") } %></p>  
+		<% else %>
+			<p><%= link_to I18n.t("concert.join"), concert_join_path(@concert), method: :post %></p>
+		<% end %>
 	<% else %>
-		<p><%= link_to I18n.t("concert.join"), concert_join_path(@concert), method: :post %></p>
+		<p><%= I18n.t("concert.log2join") %></p>
 	<% end %>
 	<p><%= link_to I18n.t("concert.users"), concert_users_path(@concert) %></p>
 

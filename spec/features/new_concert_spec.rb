@@ -24,8 +24,8 @@ RSpec.feature "New concert", type: :feature do
 
       scenario "Admin try to create invalid concert" do
         visit new_concert_path
-        fill_in 'concert_band', with: 'Cycki'
-        fill_in 'concert_place', with: 'Chuj wie gdzie' 
+        fill_in 'concert_band', with: 'Example band'
+        fill_in 'concert_place', with: 'Anywhere'
         click_button 'Create Concert'
         expect(page).to have_text("prohibited this concert from being saved:")
       end

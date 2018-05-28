@@ -26,6 +26,7 @@ pl:
     join: Wezmę udział!
     join_conf: Widzimy się na miejscu!
     resign: Nie wezmę udziału
+    log2join: Zaloguj się aby dołaczyć do koncertu
     users_list: Użytkownicy biorący udział w koncercie
     users: Wezmą udział
     0users: Brak użytkowników biorących udział
