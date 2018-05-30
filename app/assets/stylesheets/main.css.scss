@@ -1,7 +1,7 @@
-$main-color: #b00;
+$main-color: rgb(255, 41, 41);
 
 body {
-	background: black;
+	background: rgb(43, 41, 41);
 	a {
 		color: $main-color;
 	}
@@ -14,19 +14,23 @@ body {
 }
 
 .features.container {
-	$background: #090909;
+	$background: #353030;
 	background: $background;
 	color: $main-color;
 	
 	table { 
 		th {
 			background: #500;
-			color: #444;
+			color: rgb(207, 203, 203);
 		}
 		tr:hover {
 			background: lighten($background, 5%);
 		}
 	}
+}
+
+a:hover {
+	color: rgb(199, 118, 118)
 }
 
 .features {
@@ -38,8 +42,9 @@ body {
 
 .container {
 	.navbar-brand {
-		color: #000;
-		text-shadow: $main-color -2px 2px;
+		font-size: 30px;
+		color: $main-color;
+		text-shadow: rgb(32, 0, 0) -5px 5px;
 	}
 	.user {
 		color: lighten($main-color, 10%);
